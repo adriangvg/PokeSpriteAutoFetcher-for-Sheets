@@ -1,10 +1,43 @@
-# googleSheetsPokemonUtilities
+# PokeSpriteAutoFetcher for Sheets
 
-A fairly simple (right now) utility for inserting data about pokemon in to google sheets via apps script and pokeapi (https://pokeapi.co/)
+This is a fork from [Aeiiry's googleSheetsPokemonUtilities](https://github.com/Aeiiry/googleSheetsPokemonUtilities/tree/main). I've been using a modified version of it for a while and decided to update it because it may be of use for someone else (I also wanted to gain some practice with GitHub).
 
-## Installation
+The main difference of my version is that I tried to simplify it and add some options focusing on my actual needs for trade sheets. 
 
-**NOTE:** I'm a stranger on the internet, if you don't want to give the script access to your sheet/account just don't install it. All the code can be viewed  [here](https://github.com/Aeiiry/googleSheetsPokemonUtilities/blob/main/code.gs) in the code.gs file. All the script does is call pokeapi and modify some cells in your google sheet.
+What Aeiiry's version has:
+* Button to insert Pokémon sprites (cell to the right)
+* Button to insert Pokémon types (cell to the right)
+* Button to insert Pokémon weakness/resists (2 cells to the right)
+
+What my version has:
+* Button to insert Pokémon sprites (cell to the right) and Pokémon number (cell to the left)
+* Button to insert shiny Pokémon sprites (cell to the right) and Pokémon number (cell to the left)
+
+His version also inserts cell to the right if there's no space. This gave me problems in some situations so my version will override whatever is on the left or right cells.
+
+## The Script
+
+It helps Google Sheets communicate with [PokéAPI](https://pokeapi.co/) to (semi)automatically get Pokémon information (in this case, sprites, shiny sprites and national dex number).
+
+### Why use this?
+
+Other sheets will have a database in a separate sheet, where you have a Pokédex with Pokémon data that is later called in the sheets you use via VLOOKUP. This would need to be updated manually when new Pokémon are added in new games of the franchise. 
+
+Since this script connects to an external database (PokéAPI), this is unnecessary: you just to type the Pokémon's name and click the corresponding button to get the sprite.
+
+Probably the best thing is that it doesn't ask you to change your spreadsheet. It can be added to the one you're already using (unless you don't like the style of the sprites...).
+
+### How to use
+
+Write Pokémon names in cells, select those cells and then click the button of your choice to get the sprites.
+
+Names need to be written with hyphens instead of spaces. Ex: Sandy-Shocks, Deoxys-attack, Wormadam-sandy, etc. 
+
+If you can't seem to get it to recognize a pokemon, head to [PokéAPI](https://pokeapi.co/) and enter "pokemon-species/" followed by the name of the pokemon's species (e.g wormadam), then check under "varieties" for a list of pokemon names the api will recognise.
+
+### Installation
+
+This installation guide is the original one by Aeiiry.
 
 1. If you haven't already, make a new google sheet [here](https://sheets.google.com/)
 2. In the toolbar in your sheet, click "Extensions" and then click "Apps Script" - This will open a new window
@@ -16,25 +49,6 @@ A fairly simple (right now) utility for inserting data about pokemon in to googl
 8. Select your google account, click "Advanced", click "Go to [your project name] (unsafe)", then click "Allow"
 9. Now the scripts will work!
 
-## Scripts
 
-Currently has 3 functions, all require an input of one or more pokemon names selected om a column (just by clicking and dragging in google sheets).
 
-### Get pokemon Images
-Will insert images of the given pokemon in the cell to the right. Inserts a column if there is not enough room
 
-### Get pokemon type/s
-Inserts 1-2 images of the given pokemon's types in the column/s to the right of it. Inserts two columns if there is not enough room.
-
-### Get pokemon weakness/resists - WARNING WORK IN PROGRESS/BAD
-Gets a tally of each pokemon's weaknesses and resists, additionally inserts a summary of all selected pokemon's weaknesses/resists to see common types for each.
-
-### Other info
-
-To use any of the functions simply select the pokemon you want (they must be in a column) and select the function you want in the "Pokemon" menu in the toolbar
-
-The scripts will attempt to find the closest matching pokemon name in the pokeapi database, as there are some unintuitive naming conventions such as pokemon with multiple base forms needing to have the form specified (wormadam is invalid, wormadam-trash is valid). If you're unsure just enter the name of the pokemon and it will return its first form
-
-If you can't seem to get it to recognize a pokemon, head to https://pokeapi.co/ and enter pokemon-species/ and then the name of the pokemon's species (e.g wormadam), then check under "varieties" for a list of pokemon names the api will recognise. 
-
-If some of the names are odd or frustrating to enter, create an issue and I'll try to improve the input checking
