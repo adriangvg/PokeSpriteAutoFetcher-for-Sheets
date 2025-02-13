@@ -1,8 +1,8 @@
 # PokeSpriteAutoFetcher for Sheets
 
-This is a fork from [Aeiiry's googleSheetsPokemonUtilities](https://github.com/Aeiiry/googleSheetsPokemonUtilities/tree/main). I've been using a modified version of it for a while and decided to update it because it may be of use for someone else (I also wanted to gain some practice with GitHub).
+This is modified code from [Aeiiry's googleSheetsPokemonUtilities](https://github.com/Aeiiry/googleSheetsPokemonUtilities/tree/main). I've been using a modified version of it for a while and decided to update it because it may be of use for someone else (I also wanted to gain some practice with GitHub). After reading about GitHub I've come to the conclusion that this is not a fork because it's not meant to substitute or improve the original code, it's more like a parallel version for different needs.
 
-The main difference of my version is that I tried to simplify it and add some options focusing on my actual needs for trade sheets.
+The main difference of my version is that I tried to simplify it and add some options focusing on my actual needs for trade sheets. You should probably check both anyways.
 
 What Aeiiry's version has:
 * Button to insert Pokémon sprites (cell to the right)
@@ -15,7 +15,7 @@ What my version has:
 
 His version also inserts a new column to the right if there's no space. This gave me problems in some situations so my version will override whatever is on the left or right cells.
 
-## The Script
+## The Script 
 
 It helps Google Sheets communicate with [PokéAPI](https://pokeapi.co/) to (semi)automatically get Pokémon information (in this case, sprites, shiny sprites and national dex number).
 
