@@ -2,7 +2,7 @@
 
 This is a fork from [Aeiiry's googleSheetsPokemonUtilities](https://github.com/Aeiiry/googleSheetsPokemonUtilities/tree/main). I've been using a modified version of it for a while and decided to update it because it may be of use for someone else (I also wanted to gain some practice with GitHub).
 
-The main difference of my version is that I tried to simplify it and add some options focusing on my actual needs for trade sheets. 
+The main difference of my version is that I tried to simplify it and add some options focusing on my actual needs for trade sheets.
 
 What Aeiiry's version has:
 * Button to insert Pokémon sprites (cell to the right)
