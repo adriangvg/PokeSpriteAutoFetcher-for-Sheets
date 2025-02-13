@@ -13,7 +13,7 @@ What my version has:
 * Button to insert Pokémon sprites (cell to the right) and Pokémon number (cell to the left)
 * Button to insert shiny Pokémon sprites (cell to the right) and Pokémon number (cell to the left)
 
-His version also inserts cell to the right if there's no space. This gave me problems in some situations so my version will override whatever is on the left or right cells.
+His version also inserts a new column to the right if there's no space. This gave me problems in some situations so my version will override whatever is on the left or right cells.
 
 ## The Script
 
