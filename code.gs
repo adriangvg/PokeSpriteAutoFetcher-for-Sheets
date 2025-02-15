@@ -1,5 +1,5 @@
-//This creates the buttons in the menu. You can change the 'Get pokemon sprite and number' and 'Get pokemon shiny sprite and number' for whatever you want
 
+//This creates the buttons in the menu.
 function onOpen() {
     var ui = SpreadsheetApp.getUi();
     ui.createMenu('Pokemon')
