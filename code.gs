@@ -1,4 +1,3 @@
-
 //This creates the buttons in the menu.
 function onOpen() {
     var ui = SpreadsheetApp.getUi();
@@ -16,6 +15,8 @@ function RegExpPokemonForm(string) {
     return string.match(/(?<=-).+/)[0];
 }
 
+
+//Function to get Pokemon data
 function fetchPokemonData(pokemon) {
     var apiUrl = "https://pokeapi.co/api/v2/pokemon/";
     var response = UrlFetchApp.fetch(apiUrl + pokemon, { muteHttpExceptions: true });
