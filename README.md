@@ -1,6 +1,6 @@
 # PokeSpriteAutoFetcher for Sheets
 
-This is modified code from [Aeiiry's googleSheetsPokemonUtilities](https://github.com/Aeiiry/googleSheetsPokemonUtilities/tree/main). I've been using a modified version of it for a while and decided to update it because it may be of use for someone else (I also wanted to gain some practice with GitHub). After reading about GitHub I've come to the conclusion that this is not a fork because it's not meant to substitute or improve the original code, it's more like a parallel version for different needs.
+This is modified code from [Aeiiry's googleSheetsPokemonUtilities](https://github.com/Aeiiry/googleSheetsPokemonUtilities/tree/main). I've been using a custom version of it for a while and decided to update it because it may be of use for someone else (I also wanted to gain some practice with GitHub). After reading about GitHub I've come to the conclusion that this is not a fork because it's not meant to substitute or improve the original code, it's more like a parallel version for different needs.
 
 The main difference of my version is that I tried to simplify it and add some options focusing on my actual needs for trade sheets. You should probably check both anyways.
 
@@ -13,7 +13,7 @@ What my version has:
 * Button to insert Pokémon sprites (cell to the right) and Pokémon number (cell to the left)
 * Button to insert shiny Pokémon sprites (cell to the right) and Pokémon number (cell to the left)
 
-His version also inserts a new column to the right if there's no space. This gave me problems in some situations so my version will override whatever is on the left or right cells.
+His version also inserts a new column to the right if there's no space. This gave me problems in some situations so my version will override whatever is on the left or right cells. 
 
 ## The Script 
 
@@ -29,11 +29,22 @@ Probably the best thing is that it doesn't ask you to change your spreadsheet. I
 
 ### How to use
 
-Write Pokémon names in cells, select those cells and then click the button of your choice to get the sprites.
+Write Pokémon names in cells, select those cells and then click the button of your choice to get the sprites and National Pokédex number.
+
+In my version, the setup for the spreadsheet is something like: 
+empty cell (the script will write the pokédex number here) + cell where you manually write the name of the desired Pokémon + empty cell (the script will write the sprite of your Pokémon here)
 
 Names need to be written with hyphens instead of spaces. Ex: Sandy-Shocks, Deoxys-attack, Wormadam-sandy, etc. 
 
 If you can't seem to get it to recognize a pokemon, head to [PokéAPI](https://pokeapi.co/) and enter "pokemon-species/" followed by the name of the pokemon's species (e.g wormadam), then check under "varieties" for a list of pokemon names the api will recognise.
+
+Also, make sure that you don't have spaces in your cell. "Moltres" works fine but "Moltres " will get you an error.
+
+### Example spreadsheet
+
+The best spreadsheet is always the one you're already using. Ideally, you'll update the code to your spreadsheet, but here's an example one:
+
+https://docs.google.com/spreadsheets/d/1XwCGti5xF3WwVe53k0ohcrAUsPR5zwVf7g6VwM49PEE/
 
 ### Installation
 
@@ -41,7 +52,7 @@ This installation guide is the original one by Aeiiry.
 
 1. If you haven't already, make a new google sheet [here](https://sheets.google.com/)
 2. In the toolbar in your sheet, click "Extensions" and then click "Apps Script" - This will open a new window
-3. Copy the contents of the [code.gs file](https://github.com/Aeiiry/googleSheetsPokemonUtilities/blob/main/code.gs) to code.gs within the apps script page, making sure to copy it below any existing text
+3. Copy the contents of the [code.gs file](https://github.com/adriangvg/PokeSpriteAutoFetcher-for-Sheets/blob/main/code.gs) to code.gs within the apps script page, making sure to copy it below any existing text
 4. Press control+S or click the save icon, go back to your google sheet
 5. Wait for a little bit and refresh the page, a button should show up near the top of the page labelled "Pokemon". If it doesn't show up either refresh again and/or wait for ~20 seconds
 6. Next we need to grant the script access to your google sheet. Click "Pokemon" in the toolbar and then click any of the buttons that pop up

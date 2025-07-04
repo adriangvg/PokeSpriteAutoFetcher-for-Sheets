@@ -1,4 +1,6 @@
-//This creates the buttons in the menu.
+//More info and example spreadsheet in https://github.com/adriangvg/PokeSpriteAutoFetcher-for-Sheets
+
+//This creates the buttons in the menu. You can then click them to easily get your sprites
 function onOpen() {
     var ui = SpreadsheetApp.getUi();
     ui.createMenu('Pokemon')
@@ -15,7 +17,7 @@ function RegExpPokemonForm(string) {
     return string.match(/(?<=-).+/)[0];
 }
 
-//Function to fetch Pokémon data
+//Function to fetch Pokémon data, don't change anything here unless you really know what you're doing
 function fetchPokemonData(pokemon) {
     var apiUrl = "https://pokeapi.co/api/v2/pokemon/";
     var response = UrlFetchApp.fetch(apiUrl + pokemon, { muteHttpExceptions: true });
@@ -44,6 +46,10 @@ function fetchPokemonData(pokemon) {
     return JSON.parse(response);
 }
 
+//Function to fetch Pokémon sprite and number
+//Line 63: cell where the number of the Pokémon will be written (one cell left to the active cell)
+//Line 64: cell where the sprite of the Pokémon will be written (one cell right to the active cell)
+//If you don't need the number, you can just delete line 63 (and 80 for shinies)
 function getPokemonImageNumber() {
     var activeSheet = SpreadsheetApp.getActiveSheet();
     var selection = activeSheet.getSelection();
@@ -59,6 +65,8 @@ function getPokemonImageNumber() {
     }
 }
 
+//Function to fetch Pokémon shiny sprite image
+//Same as in the function for non-shinies, lines 80 and 81 are the key ones that affect where data will be written
 function getPokemonShinyImageNumber() {
     var activeSheet = SpreadsheetApp.getActiveSheet();
     var selection = activeSheet.getSelection();
